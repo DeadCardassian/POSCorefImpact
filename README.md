@@ -47,7 +47,19 @@ First, through some tests performed on dcoref, it is observed that its performan
 
 After deactivating the parse tree, I used the rule-based JJ2NN algorithm developed by [Qi Lemeng](https://github.com/qilem) and I to update all the POS information in the dataset.
 
-JJ2NN algorithm details: 
+JJ2NN algorithm details: The script modifies lines in a file where the POS tag **JJ** (adjective) is changed to **NN** (noun) under certain conditions. Here’s how the process works:
+
+1. **Identifying Lines with POS Tag 'JJ'**: 
+   - The script splits each line into words and checks if the fifth element (index 4) in the split words is one of `'JJ'`, `'JJS'`, or `'JJR'`, which are all adjective tags.
+
+2. **Conditions for Modifying 'JJ'**: 
+   - The script checks the surrounding lines (previous and next lines) for specific patterns in their POS tags. These conditions involve:
+     - If the previous line has more than 4 words, and its fifth word is not 'DT' (determiner).
+     - If the next line's fifth word is not a noun (doesn't start with 'N') and is not in a predefined list of other POS tags (like `'JJ'`, `'CD'`, etc.).
+     - Further checks are made for the POS tags of the lines after the next one (`i + 2`) to ensure certain combinations are met, such as whether the third line contains certain adjectives or verbs.
+
+### Summary of Key Condition:
+- If the script detects that a word's POS tag is 'JJ' and the surrounding lines match certain patterns, it changes the 'JJ' to 'NN' (noun). This modification happens only when the complex set of conditions involving the POS tags of adjacent lines is satisfied.
 
 ## Usage
 If you haven't finished setups, finish setups first.
