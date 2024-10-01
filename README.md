@@ -1,7 +1,7 @@
 # JJ2NN in Coref
 
 ## Overview
-This project investigates the impact of part-of-speech (POS) changes on the performance of a [deterministic coreference resolution system](https://nlp.stanford.edu/software/dcoref.html) (dcoref). Using the Stanford NLP pipeline and the [CoNLL-2011 dataset](https://conll.cemantix.org/2011/data.html), we specifically modify the POS tags to explore how nominal adjectives affects coreference resolution (coref) performance.
+This project investigates the impact of part-of-speech (POS) changes on the performance of a [deterministic coreference resolution system](https://nlp.stanford.edu/software/dcoref.html) (dcoref). Using the Stanford NLP pipeline and the [CoNLL-2011 dataset](https://conll.cemantix.org/2011/data.html), we specifically modify the POS tags to explore how nominal adjectives affects coreference resolution (coref) performance. This repository is independent, but it is also part of [this paper](https://arxiv.org/abs/2409.14374).
 
 ## Table of Contents
 1. [Background](#background)<br>
